@@ -1,0 +1,24 @@
+# Sample BigQuery Configuration
+# Copy this file to config/bigquery_config.py and update with your settings
+
+import os
+from google.cloud import bigquery
+from google.auth import default
+
+class BigQueryConfig:
+    def __init__(self):
+        # Get credentials and project ID
+        self.credentials, self.project_id = default()
+        
+        # BigQuery settings
+        self.dataset_id = os.getenv('BIGQUERY_DATASET', 'ecommerce_intelligence')
+        self.location = os.getenv('BIGQUERY_LOCATION', 'US')
+        
+        # Initialize BigQuery client
+        self.client = bigquery.Client(
+            project=self.project_id,
+            location=self.location
+        )
+
+# Global configuration instance
+config = BigQueryConfig()
