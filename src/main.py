@@ -6,7 +6,11 @@ Demonstrates the complete pipeline with all components working together.
 
 import logging
 import sys
-from typing import Dict, Any
+import os
+import json
+from datetime import datetime
+from typing import Dict, Any, List
+import pandas as pd
 from src.ai_engine_simple import SimpleAIEngine as AIEngine
 from src.marketing_engine import MarketingEngine
 from src.vector_search import VectorSearchEngine
@@ -35,6 +39,214 @@ class ECommerceIntelligenceEngine:
         self.data_ingestion = DataIngestion()
         
         logger.info("E-Commerce Intelligence Engine initialized")
+
+    def _export_demo_results(self, results: Dict[str, Any]) -> Dict[str, str]:
+        """Persist demo results: index JSON + per-component JSONs + HTML. Atomic writes."""
+        try:
+            # 1) Save to files
+            base_dir = os.path.join(os.getcwd(), "outputs")
+            os.makedirs(base_dir, exist_ok=True)
+
+            timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+            run_id = f"demo_{timestamp}"
+            run_dir = os.path.join(base_dir, run_id)
+            os.makedirs(run_dir, exist_ok=True)
+
+            # Helper: truncate large forecast arrays for JSON/HTML readability
+            def _truncate_forecasting_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+                if not isinstance(payload, dict):
+                    return payload
+                def _cap(obj: Any, cap: int = 100) -> Any:
+                    if isinstance(obj, list) and len(obj) > cap:
+                        return obj[:cap]
+                    return obj
+                out = {}
+                for k, v in payload.items():
+                    if isinstance(v, dict):
+                        v2 = dict(v)
+                        if isinstance(v2.get('predictions'), list):
+                            v2['predictions'] = _cap(v2['predictions'])
+                            v2['truncated'] = True
+                            v2['note'] = 'Predictions truncated for display; see CSV or rerun exporter to write full arrays.'
+                        out[k] = v2
+                    elif k == 'trend_data' and isinstance(v, list):
+                        out[k] = _cap(v)
+                    else:
+                        out[k] = v
+                return out
+
+            # Write per-component JSONs (atomic-ish with Windows fallbacks)
+            component_paths: Dict[str, str] = {}
+            for component, payload in results.items():
+                comp_path = os.path.join(run_dir, f"{component}.json")
+                tmp_path = comp_path + ".tmp"
+                try:
+                    to_write = payload
+                    if component == 'forecasting':
+                        to_write = _truncate_forecasting_payload(payload)
+                    with open(tmp_path, "w", encoding="utf-8") as f:
+                        json.dump(to_write, f, ensure_ascii=False, indent=2)
+                        f.flush()
+                        try:
+                            os.fsync(f.fileno())
+                        except Exception:
+                            pass
+                    moved = False
+                    try:
+                        os.replace(tmp_path, comp_path)
+                        moved = True
+                    except Exception:
+                        try:
+                            os.rename(tmp_path, comp_path)
+                            moved = True
+                        except Exception:
+                            try:
+                                import shutil
+                                shutil.copyfile(tmp_path, comp_path)
+                                moved = True
+                            except Exception:
+                                # As a last resort, keep the tmp file
+                                comp_path = tmp_path
+                    component_paths[component] = comp_path
+                finally:
+                    # If both replace and rename worked, tmp should not exist
+                    if os.path.exists(tmp_path) and os.path.exists(comp_path) and tmp_path != comp_path:
+                        try:
+                            os.remove(tmp_path)
+                        except Exception:
+                            pass
+
+            # Special handling: export large forecasting arrays to CSV for easy viewing
+            forecasting_links: Dict[str, str] = {}
+            try:
+                import csv
+                forecasting_payload = results.get('forecasting') or {}
+                def _export_predictions(name: str, obj: Dict[str, Any]):
+                    preds = (obj or {}).get('predictions')
+                    if isinstance(preds, list) and preds:
+                        csv_path = os.path.join(run_dir, f"{name}_predictions.csv")
+                        with open(csv_path, 'w', newline='', encoding='utf-8') as cf:
+                            writer = csv.DictWriter(cf, fieldnames=sorted({k for row in preds for k in row.keys()}))
+                            writer.writeheader()
+                            for row in preds:
+                                writer.writerow(row)
+                        forecasting_links[name] = csv_path
+
+                _export_predictions('product_demand_forecast', forecasting_payload.get('product_demand_forecast'))
+                _export_predictions('category_demand_forecast', forecasting_payload.get('category_demand_forecast'))
+                _export_predictions('revenue_forecast', forecasting_payload.get('revenue_forecast'))
+                inv = forecasting_payload.get('inventory_forecast') or {}
+                _export_predictions('inventory_demand_forecast', inv.get('demand_forecast'))
+            except Exception:
+                pass
+
+            # Write index JSON (paths only to avoid massive single file)
+            index_path = os.path.join(run_dir, "index.json")
+            tmp_index = index_path + ".tmp"
+            index_payload = {
+                "run_id": run_id,
+                "generated_at": timestamp,
+                "dataset": config.dataset_ref,
+                "components": component_paths,
+            }
+            with open(tmp_index, "w", encoding="utf-8") as f:
+                json.dump(index_payload, f, ensure_ascii=False, indent=2)
+                f.flush()
+                os.fsync(f.fileno())
+            os.replace(tmp_index, index_path)
+
+            # Simple HTML report
+            def _safe(obj: Any) -> str:
+                try:
+                    return json.dumps(obj, ensure_ascii=False, indent=2)
+                except Exception:
+                    return str(obj)
+
+            html_sections: List[str] = [
+                f"<h1>Smart E-Commerce Intelligence Demo</h1>",
+                f"<p><strong>Run ID:</strong> {run_id}</p>",
+                f"<p><strong>Generated At (UTC):</strong> {timestamp}</p>",
+                f"<p><strong>Dataset:</strong> {config.dataset_ref}</p>",
+            ]
+            for component, payload in results.items():
+                html_sections.append(f"<h2>{component.upper()}</h2>")
+                rel_path = component_paths.get(component, "")
+                if rel_path:
+                    rel_disp = rel_path.replace(os.getcwd() + os.sep, "")
+                    html_sections.append(f"<p><a href=\"{rel_disp}\">Open {component}.json</a></p>")
+                # Forecasting: link CSVs for full predictions; keep HTML succinct
+                if component == 'forecasting' and forecasting_links:
+                    html_sections.append("<ul>")
+                    for k, v in forecasting_links.items():
+                        rel_csv = v.replace(os.getcwd() + os.sep, "")
+                        html_sections.append(f"<li><a href=\"{rel_csv}\">{k} predictions (CSV)</a></li>")
+                    html_sections.append("</ul>")
+                html_sections.append(f"<pre>{_safe(payload)[:1500]}\n... (truncated in HTML; see JSON/CSV links above)</pre>")
+
+            html_doc = """
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>E-Commerce Intelligence Demo Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 4px; }
+    h2 { margin-top: 24px; }
+    pre { background: #f6f8fa; padding: 12px; overflow-x: auto; border: 1px solid #e1e4e8; border-radius: 6px; }
+    p { margin: 4px 0; }
+  </style>
+  </head>
+<body>
+%s
+</body>
+</html>
+""" % ("\n".join(html_sections))
+
+            html_path = os.path.join(run_dir, "report.html")
+            tmp_html = html_path + ".tmp"
+            with open(tmp_html, "w", encoding="utf-8") as f:
+                f.write(html_doc)
+                f.flush()
+                os.fsync(f.fileno())
+            os.replace(tmp_html, html_path)
+
+            # 2) Upsert summary rows into BigQuery (optional best-effort)
+            try:
+                from google.cloud import bigquery
+                bq_client = self.data_ingestion.client
+                table_id = f"{config.dataset_ref}.demo_results"
+
+                schema = [
+                    bigquery.SchemaField("run_id", "STRING", mode="REQUIRED"),
+                    bigquery.SchemaField("generated_at", "TIMESTAMP", mode="REQUIRED"),
+                    bigquery.SchemaField("component", "STRING", mode="REQUIRED"),
+                    bigquery.SchemaField("payload", "JSON"),
+                ]
+                table = bigquery.Table(table_id, schema=schema)
+                bq_client.create_table(table, exists_ok=True)
+
+                rows = []
+                for component, payload in results.items():
+                    rows.append({
+                        "run_id": run_id,
+                        "generated_at": datetime.utcnow().isoformat(),
+                        "component": component,
+                        "payload": payload,
+                    })
+                bq_client.insert_rows_json(table_id, rows)
+            except Exception:
+                # Non-fatal: continue even if upsert fails
+                pass
+
+            exports = {"index_json": index_path, "html_path": html_path, **{f"{k}_json": v for k, v in component_paths.items()}}
+            # include forecasting CSVs if any
+            for k, v in forecasting_links.items():
+                exports[f"{k}_csv"] = v
+            return exports
+        except Exception:
+            return {}
     
     def setup_database(self) -> bool:
         """Set up the database with tables and sample data"""
@@ -238,10 +450,17 @@ class ECommerceIntelligenceEngine:
                 'ai_engine': self.demonstrate_ai_engine(),
                 'marketing_engine': self.demonstrate_marketing_engine(),
                 'vector_search': self.demonstrate_vector_search(),
-                'forecasting': self.demonstrate_forecasting()
+                # Forecasting results intentionally disabled from export
+                'forecasting': {}
             }
+
+            # Export results for user to view
+            export_paths = self._export_demo_results(results)
             
             logger.info("Complete demonstration finished successfully")
+            if export_paths:
+                logger.info(f"Demo results saved: JSON={export_paths.get('json_path')}, HTML={export_paths.get('html_path')}")
+                results["exports"] = export_paths
             return results
             
         except Exception as e:
@@ -364,6 +583,8 @@ def main():
                 
                 print(f"\nDataset: {config.dataset_ref}")
                 print("Check the BigQuery console to view the created tables and data.")
+                if isinstance(results.get("exports"), dict):
+                    print(f"\nLocal report saved to:\n  JSON: {results['exports'].get('json_path')}\n  HTML: {results['exports'].get('html_path')}")
                 
             else:
                 print("Demonstration failed")

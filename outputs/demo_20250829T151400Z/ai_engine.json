@@ -1,0 +1,24 @@
+{
+  "generated_text": "\n        Thank you for your inquiry about: Create a product description for a wireless Bluetooth speaker...\n        \n        We're here to help you find exactly what you're looking for. \n        Please let us know if you need any additional assistance!\n        ",
+  "sentiment_analysis": {
+    "sentiment": "positive",
+    "confidence": 0.6,
+    "positive_score": 1,
+    "negative_score": 0,
+    "text_length": 71
+  },
+  "text_summary": "\n            This wireless Bluetooth speaker offers exceptional sound quality with deep bass and ...",
+  "extracted_keywords": [
+    "bluetooth",
+    "speaker",
+    "quality",
+    "wireless",
+    "offers"
+  ],
+  "text_classification": {
+    "electronics": 0.4545454545454545,
+    "clothing": 0.0,
+    "home_garden": 0.0,
+    "sports_outdoors": 0.5454545454545454
+  }
+}

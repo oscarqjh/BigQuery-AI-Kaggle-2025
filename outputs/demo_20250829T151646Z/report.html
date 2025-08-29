@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-Commerce Intelligence Demo Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 4px; }
+    h2 { margin-top: 24px; }
+    pre { background: #f6f8fa; padding: 12px; overflow-x: auto; border: 1px solid #e1e4e8; border-radius: 6px; }
+    p { margin: 4px 0; }
+  </style>
+  </head>
+<body>
+<h1>Smart E-Commerce Intelligence Demo</h1>
+<p><strong>Run ID:</strong> demo_20250829T151646Z</p>
+<p><strong>Generated At (UTC):</strong> 20250829T151646Z</p>
+<p><strong>Dataset:</strong> mystic-hull-470514-n3.ecommerce_intelligence</p>
+<h2>AI_ENGINE</h2>
+<p><a href="outputs\demo_20250829T151646Z\ai_engine.json">Open ai_engine.json</a></p>
+<pre>{
+  "generated_text": "\n        Thank you for your inquiry about: Create a product description for a wireless Bluetooth speaker...\n        \n        We're here to help you find exactly what you're looking for. \n        Please let us know if you need any additional assistance!\n        ",
+  "sentiment_analysis": {
+    "sentiment": "positive",
+    "confidence": 0.6,
+    "positive_score": 1,
+    "negative_score": 0,
+    "text_length": 71
+  },
+  "text_summary": "\n            This wireless Bluetooth speaker offers exceptional sound quality with deep bass and ...",
+  "extracted_keywords": [
+    "bluetooth",
+    "speaker",
+    "quality",
+    "wireless",
+    "offers"
+  ],
+  "text_classification": {
+    "electronics": 0.4545454545454545,
+    "clothing": 0.0,
+    "home_garden": 0.0,
+    "sports_outdoors": 0.5454545454545454
+  }
+}
+... (truncated in HTML; see JSON/CSV links above)</pre>
+<h2>MARKETING_ENGINE</h2>
+<p><a href="outputs\demo_20250829T151646Z\marketing_engine.json">Open marketing_engine.json</a></p>
+<pre>{
+  "personalized_email": "\n        Dear Valued Customer,\n\n        We're excited to share some amazing products that we think you'll love! \n        Based on your preferences, we've curated a special selection just for you.\n\n        Don't miss out on these incredible deals - shop now and enjoy exclusive discounts!\n\n        Best regards,\n        Your E-Commerce Team\n        ",
+  "recommendations_email": "\n        Thank you for your inquiry about: \n            Create a personalized email recommending products to a user with the following preferen...\n        \n        We're here to help you find exactly what you're looking for. \n        Please let us know if you need any additional assistance!\n        ",
+  "abandoned_cart_email": "\n        Dear Valued Customer,\n\n        We're excited to share some amazing products that we think you'll love! \n        Based on your preferences, we've curated a special selection just for you.\n\n        Don't miss out on these incredible deals - shop now and enjoy exclusive discounts!\n\n        Best regards,\n        Your E-Commerce Team\n        "
+}
+... (truncated in HTML; see JSON/CSV links above)</pre>
+<h2>VECTOR_SEARCH</h2>
+<p><a href="outputs\demo_20250829T151646Z\vector_search.json">Open vector_search.json</a></p>
+<pre>{
+  "similar_products": [],
+  "text_search_results": [
+    {
+      "product_id": "PROD001",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life",
+      "price": 89.99,
+      "category": "electronics",
+      "rating": 4.5,
+      "image_url": "https://example.com/headphones.jpg",
+      "stock_quantity": 150,
+      "relevance_score": 0.8
+    }
+  ],
+  "product_substitutions": [],
+  "cross_category_recommendations": [
+    {
+      "product_id": "PROD004",
+      "name": "Stainless Steel Water Bottle",
+      "description": "Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours",
+      "price": 34.99,
+      "category": "home_garden",
+      "rating": 4.6,
+      "image_url": "https://example.com/bottle.jpg",
+      "stock_quantity": 200,
+      "similarity_score": 0.7,
+      "recommendation_type": "cross_category"
+    },
+    {
+      "product_id": "PROD005",
+      "name": "Yoga Mat Premium",
+      "description": "Non-slip yoga mat made from eco-friendly materials with carrying strap",
+      "price": 49.99,
+      "category": "sports_outdoors",
+      "rating": 4.4,
+      "image_url": "https://example.com/yogamat.jpg",
+      "stock_quantity": 120,
+      "similarity_score": 0.7,
+      "recommendation_type": "cross_category"
+    }
+  ]
+}
+... (truncated in HTML; see JSON/CSV links above)</pre>
+<h2>FORECASTING</h2>
+<p><a href="outputs\demo_20250829T151646Z\forecasting.json">Open forecasting.json</a></p>
+<pre>{}
+... (truncated in HTML; see JSON/CSV links above)</pre>
+</body>
+</html>

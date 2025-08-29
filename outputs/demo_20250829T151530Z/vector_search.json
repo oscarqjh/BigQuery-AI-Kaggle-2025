@@ -1,0 +1,43 @@
+{
+  "similar_products": [],
+  "text_search_results": [
+    {
+      "product_id": "PROD001",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life",
+      "price": 89.99,
+      "category": "electronics",
+      "rating": 4.5,
+      "image_url": "https://example.com/headphones.jpg",
+      "stock_quantity": 150,
+      "relevance_score": 0.8
+    }
+  ],
+  "product_substitutions": [],
+  "cross_category_recommendations": [
+    {
+      "product_id": "PROD004",
+      "name": "Stainless Steel Water Bottle",
+      "description": "Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours",
+      "price": 34.99,
+      "category": "home_garden",
+      "rating": 4.6,
+      "image_url": "https://example.com/bottle.jpg",
+      "stock_quantity": 200,
+      "similarity_score": 0.7,
+      "recommendation_type": "cross_category"
+    },
+    {
+      "product_id": "PROD005",
+      "name": "Yoga Mat Premium",
+      "description": "Non-slip yoga mat made from eco-friendly materials with carrying strap",
+      "price": 49.99,
+      "category": "sports_outdoors",
+      "rating": 4.4,
+      "image_url": "https://example.com/yogamat.jpg",
+      "stock_quantity": 120,
+      "similarity_score": 0.7,
+      "recommendation_type": "cross_category"
+    }
+  ]
+}

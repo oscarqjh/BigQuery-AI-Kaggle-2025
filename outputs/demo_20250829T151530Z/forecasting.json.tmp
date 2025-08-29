@@ -1,0 +1,1139 @@
+{
+  "product_demand_forecast": {
+    "product_id": "PROD001",
+    "forecast_periods": 30,
+    "predictions": [
+      {
+        "period": 1,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-08-30T23:15:24.069493"
+      },
+      {
+        "period": 2,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-08-31T23:15:24.069504"
+      },
+      {
+        "period": 3,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-01T23:15:24.069508"
+      },
+      {
+        "period": 4,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-02T23:15:24.069511"
+      },
+      {
+        "period": 5,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-03T23:15:24.069513"
+      },
+      {
+        "period": 6,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-04T23:15:24.069515"
+      },
+      {
+        "period": 7,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-05T23:15:24.069518"
+      },
+      {
+        "period": 8,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-06T23:15:24.069520"
+      },
+      {
+        "period": 9,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-07T23:15:24.069522"
+      },
+      {
+        "period": 10,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-08T23:15:24.069525"
+      },
+      {
+        "period": 11,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-09T23:15:24.069527"
+      },
+      {
+        "period": 12,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-10T23:15:24.069529"
+      },
+      {
+        "period": 13,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-11T23:15:24.069531"
+      },
+      {
+        "period": 14,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-12T23:15:24.069534"
+      },
+      {
+        "period": 15,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-13T23:15:24.069536"
+      },
+      {
+        "period": 16,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-14T23:15:24.069538"
+      },
+      {
+        "period": 17,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-15T23:15:24.069540"
+      },
+      {
+        "period": 18,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-16T23:15:24.069542"
+      },
+      {
+        "period": 19,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-17T23:15:24.069545"
+      },
+      {
+        "period": 20,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-18T23:15:24.069547"
+      },
+      {
+        "period": 21,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-19T23:15:24.069549"
+      },
+      {
+        "period": 22,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-20T23:15:24.069551"
+      },
+      {
+        "period": 23,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-21T23:15:24.069553"
+      },
+      {
+        "period": 24,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-22T23:15:24.069555"
+      },
+      {
+        "period": 25,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-23T23:15:24.069558"
+      },
+      {
+        "period": 26,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-24T23:15:24.069560"
+      },
+      {
+        "period": 27,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-25T23:15:24.069562"
+      },
+      {
+        "period": 28,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-26T23:15:24.069564"
+      },
+      {
+        "period": 29,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-27T23:15:24.069566"
+      },
+      {
+        "period": 30,
+        "value": 1,
+        "confidence": 0.8,
+        "date": "2025-09-28T23:15:24.069569"
+      }
+    ],
+    "method": "moving_average",
+    "confidence_level": 0.8,
+    "last_updated": "2025-08-29T23:15:24.069572",
+    "truncated": true,
+    "note": "Predictions truncated for display; see CSV or rerun exporter to write full arrays."
+  },
+  "category_demand_forecast": {
+    "category": "electronics",
+    "forecast_periods": 30,
+    "predictions": [
+      {
+        "period": 1,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-08-30T23:15:25.702551"
+      },
+      {
+        "period": 2,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-08-31T23:15:25.702566"
+      },
+      {
+        "period": 3,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-01T23:15:25.702573"
+      },
+      {
+        "period": 4,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-02T23:15:25.702578"
+      },
+      {
+        "period": 5,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-03T23:15:25.702582"
+      },
+      {
+        "period": 6,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-04T23:15:25.702587"
+      },
+      {
+        "period": 7,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-05T23:15:25.702590"
+      },
+      {
+        "period": 8,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-06T23:15:25.702594"
+      },
+      {
+        "period": 9,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-07T23:15:25.702598"
+      },
+      {
+        "period": 10,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-08T23:15:25.702602"
+      },
+      {
+        "period": 11,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-09T23:15:25.702606"
+      },
+      {
+        "period": 12,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-10T23:15:25.702610"
+      },
+      {
+        "period": 13,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-11T23:15:25.702614"
+      },
+      {
+        "period": 14,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-12T23:15:25.702618"
+      },
+      {
+        "period": 15,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-13T23:15:25.702622"
+      },
+      {
+        "period": 16,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-14T23:15:25.702626"
+      },
+      {
+        "period": 17,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-15T23:15:25.702631"
+      },
+      {
+        "period": 18,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-16T23:15:25.702635"
+      },
+      {
+        "period": 19,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-17T23:15:25.702640"
+      },
+      {
+        "period": 20,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-18T23:15:25.702644"
+      },
+      {
+        "period": 21,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-19T23:15:25.702649"
+      },
+      {
+        "period": 22,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-20T23:15:25.702653"
+      },
+      {
+        "period": 23,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-21T23:15:25.702658"
+      },
+      {
+        "period": 24,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-22T23:15:25.702663"
+      },
+      {
+        "period": 25,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-23T23:15:25.702667"
+      },
+      {
+        "period": 26,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-24T23:15:25.702672"
+      },
+      {
+        "period": 27,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-25T23:15:25.702676"
+      },
+      {
+        "period": 28,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-26T23:15:25.702681"
+      },
+      {
+        "period": 29,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-27T23:15:25.702686"
+      },
+      {
+        "period": 30,
+        "value": 144.99,
+        "confidence": 0.75,
+        "date": "2025-09-28T23:15:25.702690"
+      }
+    ],
+    "method": "trend_analysis",
+    "confidence_level": 0.75,
+    "last_updated": "2025-08-29T23:15:25.702695",
+    "truncated": true,
+    "note": "Predictions truncated for display; see CSV or rerun exporter to write full arrays."
+  },
+  "revenue_forecast": {
+    "forecast_type": "revenue",
+    "forecast_periods": 30,
+    "predictions": [
+      {
+        "period": 1,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-08-30T23:15:27.110314"
+      },
+      {
+        "period": 2,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-08-31T23:15:27.110324"
+      },
+      {
+        "period": 3,
+        "value": 109.488,
+        "confidence": 0.7,
+        "date": "2025-09-01T23:15:27.110329"
+      },
+      {
+        "period": 4,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-02T23:15:27.110333"
+      },
+      {
+        "period": 5,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-03T23:15:27.110336"
+      },
+      {
+        "period": 6,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-04T23:15:27.110339"
+      },
+      {
+        "period": 7,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-05T23:15:27.110343"
+      },
+      {
+        "period": 8,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-06T23:15:27.110346"
+      },
+      {
+        "period": 9,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-07T23:15:27.110349"
+      },
+      {
+        "period": 10,
+        "value": 109.488,
+        "confidence": 0.7,
+        "date": "2025-09-08T23:15:27.110353"
+      },
+      {
+        "period": 11,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-09T23:15:27.110356"
+      },
+      {
+        "period": 12,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-10T23:15:27.110359"
+      },
+      {
+        "period": 13,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-11T23:15:27.110363"
+      },
+      {
+        "period": 14,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-12T23:15:27.110366"
+      },
+      {
+        "period": 15,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-13T23:15:27.110369"
+      },
+      {
+        "period": 16,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-14T23:15:27.110372"
+      },
+      {
+        "period": 17,
+        "value": 109.488,
+        "confidence": 0.7,
+        "date": "2025-09-15T23:15:27.110381"
+      },
+      {
+        "period": 18,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-16T23:15:27.110387"
+      },
+      {
+        "period": 19,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-17T23:15:27.110390"
+      },
+      {
+        "period": 20,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-18T23:15:27.110393"
+      },
+      {
+        "period": 21,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-19T23:15:27.110397"
+      },
+      {
+        "period": 22,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-20T23:15:27.110402"
+      },
+      {
+        "period": 23,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-21T23:15:27.110405"
+      },
+      {
+        "period": 24,
+        "value": 109.488,
+        "confidence": 0.7,
+        "date": "2025-09-22T23:15:27.110408"
+      },
+      {
+        "period": 25,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-23T23:15:27.110411"
+      },
+      {
+        "period": 26,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-24T23:15:27.110415"
+      },
+      {
+        "period": 27,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-25T23:15:27.110418"
+      },
+      {
+        "period": 28,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-26T23:15:27.110422"
+      },
+      {
+        "period": 29,
+        "value": 145.984,
+        "confidence": 0.7,
+        "date": "2025-09-27T23:15:27.110425"
+      },
+      {
+        "period": 30,
+        "value": 121.65333333333334,
+        "confidence": 0.7,
+        "date": "2025-09-28T23:15:27.110428"
+      }
+    ],
+    "method": "seasonal_analysis",
+    "confidence_level": 0.7,
+    "last_updated": "2025-08-29T23:15:27.110431",
+    "truncated": true,
+    "note": "Predictions truncated for display; see CSV or rerun exporter to write full arrays."
+  },
+  "inventory_forecast": {
+    "product_id": "PROD001",
+    "current_stock": 150,
+    "stockout_day": null,
+    "stockout_confidence": null,
+    "cumulative_demand_90_days": 90,
+    "recommended_reorder_quantity": 0,
+    "demand_forecast": {
+      "product_id": "PROD001",
+      "forecast_periods": 90,
+      "predictions": [
+        {
+          "period": 1,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-08-30T23:15:28.728314"
+        },
+        {
+          "period": 2,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-08-31T23:15:28.728324"
+        },
+        {
+          "period": 3,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-01T23:15:28.728327"
+        },
+        {
+          "period": 4,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-02T23:15:28.728330"
+        },
+        {
+          "period": 5,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-03T23:15:28.728332"
+        },
+        {
+          "period": 6,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-04T23:15:28.728334"
+        },
+        {
+          "period": 7,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-05T23:15:28.728336"
+        },
+        {
+          "period": 8,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-06T23:15:28.728339"
+        },
+        {
+          "period": 9,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-07T23:15:28.728341"
+        },
+        {
+          "period": 10,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-08T23:15:28.728343"
+        },
+        {
+          "period": 11,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-09T23:15:28.728345"
+        },
+        {
+          "period": 12,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-10T23:15:28.728348"
+        },
+        {
+          "period": 13,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-11T23:15:28.728350"
+        },
+        {
+          "period": 14,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-12T23:15:28.728352"
+        },
+        {
+          "period": 15,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-13T23:15:28.728354"
+        },
+        {
+          "period": 16,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-14T23:15:28.728356"
+        },
+        {
+          "period": 17,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-15T23:15:28.728359"
+        },
+        {
+          "period": 18,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-16T23:15:28.728361"
+        },
+        {
+          "period": 19,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-17T23:15:28.728363"
+        },
+        {
+          "period": 20,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-18T23:15:28.728366"
+        },
+        {
+          "period": 21,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-19T23:15:28.728368"
+        },
+        {
+          "period": 22,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-20T23:15:28.728370"
+        },
+        {
+          "period": 23,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-21T23:15:28.728372"
+        },
+        {
+          "period": 24,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-22T23:15:28.728374"
+        },
+        {
+          "period": 25,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-23T23:15:28.728376"
+        },
+        {
+          "period": 26,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-24T23:15:28.728379"
+        },
+        {
+          "period": 27,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-25T23:15:28.728381"
+        },
+        {
+          "period": 28,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-26T23:15:28.728383"
+        },
+        {
+          "period": 29,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-27T23:15:28.728385"
+        },
+        {
+          "period": 30,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-28T23:15:28.728387"
+        },
+        {
+          "period": 31,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-29T23:15:28.728390"
+        },
+        {
+          "period": 32,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-09-30T23:15:28.728392"
+        },
+        {
+          "period": 33,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-01T23:15:28.728394"
+        },
+        {
+          "period": 34,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-02T23:15:28.728396"
+        },
+        {
+          "period": 35,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-03T23:15:28.728398"
+        },
+        {
+          "period": 36,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-04T23:15:28.728401"
+        },
+        {
+          "period": 37,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-05T23:15:28.728403"
+        },
+        {
+          "period": 38,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-06T23:15:28.728405"
+        },
+        {
+          "period": 39,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-07T23:15:28.728408"
+        },
+        {
+          "period": 40,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-08T23:15:28.728410"
+        },
+        {
+          "period": 41,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-09T23:15:28.728412"
+        },
+        {
+          "period": 42,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-10T23:15:28.728414"
+        },
+        {
+          "period": 43,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-11T23:15:28.728416"
+        },
+        {
+          "period": 44,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-12T23:15:28.728419"
+        },
+        {
+          "period": 45,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-13T23:15:28.728421"
+        },
+        {
+          "period": 46,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-14T23:15:28.728423"
+        },
+        {
+          "period": 47,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-15T23:15:28.728425"
+        },
+        {
+          "period": 48,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-16T23:15:28.728427"
+        },
+        {
+          "period": 49,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-17T23:15:28.728429"
+        },
+        {
+          "period": 50,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-18T23:15:28.728431"
+        },
+        {
+          "period": 51,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-19T23:15:28.728433"
+        },
+        {
+          "period": 52,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-20T23:15:28.728435"
+        },
+        {
+          "period": 53,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-21T23:15:28.728438"
+        },
+        {
+          "period": 54,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-22T23:15:28.728440"
+        },
+        {
+          "period": 55,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-23T23:15:28.728442"
+        },
+        {
+          "period": 56,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-24T23:15:28.728444"
+        },
+        {
+          "period": 57,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-25T23:15:28.728447"
+        },
+        {
+          "period": 58,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-26T23:15:28.728449"
+        },
+        {
+          "period": 59,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-27T23:15:28.728451"
+        },
+        {
+          "period": 60,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-28T23:15:28.728453"
+        },
+        {
+          "period": 61,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-29T23:15:28.728455"
+        },
+        {
+          "period": 62,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-30T23:15:28.728457"
+        },
+        {
+          "period": 63,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-10-31T23:15:28.728459"
+        },
+        {
+          "period": 64,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-01T23:15:28.728461"
+        },
+        {
+          "period": 65,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-02T23:15:28.728464"
+        },
+        {
+          "period": 66,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-03T23:15:28.728467"
+        },
+        {
+          "period": 67,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-04T23:15:28.728469"
+        },
+        {
+          "period": 68,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-05T23:15:28.728471"
+        },
+        {
+          "period": 69,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-06T23:15:28.728473"
+        },
+        {
+          "period": 70,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-07T23:15:28.728475"
+        },
+        {
+          "period": 71,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-08T23:15:28.728478"
+        },
+        {
+          "period": 72,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-09T23:15:28.728480"
+        },
+        {
+          "period": 73,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-10T23:15:28.728482"
+        },
+        {
+          "period": 74,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-11T23:15:28.728484"
+        },
+        {
+          "period": 75,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-12T23:15:28.728486"
+        },
+        {
+          "period": 76,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-13T23:15:28.728493"
+        },
+        {
+          "period": 77,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-14T23:15:28.728495"
+        },
+        {
+          "period": 78,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-15T23:15:28.728498"
+        },
+        {
+          "period": 79,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-16T23:15:28.728502"
+        },
+        {
+          "period": 80,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-17T23:15:28.728504"
+        },
+        {
+          "period": 81,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-18T23:15:28.728506"
+        },
+        {
+          "period": 82,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-19T23:15:28.728508"
+        },
+        {
+          "period": 83,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-20T23:15:28.728511"
+        },
+        {
+          "period": 84,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-21T23:15:28.728513"
+        },
+        {
+          "period": 85,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-22T23:15:28.728515"
+        },
+        {
+          "period": 86,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-23T23:15:28.728517"
+        },
+        {
+          "period": 87,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-24T23:15:28.728519"
+        },
+        {
+          "period": 88,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-25T23:15:28.728521"
+        },
+        {
+          "period": 89,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-26T23:15:28.728523"
+        },
+        {
+          "period": 90,
+          "value": 1,
+          "confidence": 0.8,
+          "date": "2025-11-27T23:15:28.728526"
+        }
+      ],
+      "method": "moving_average",
+      "confidence_level": 0.8,
+      "last_updated": "2025-08-29T23:15:28.728528"
+    }
+  },
+  "trend_analysis": {
+    "product_id": "PROD001",
+    "trend_direction": "stable",
+    "trend_strength": 0,
+    "recent_average_daily_sales": 0,
+    "trend_data": [
+      {
+        "date": 
